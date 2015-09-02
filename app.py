@@ -26,7 +26,7 @@ urls = (
 
 app = web.application(urls, globals())
 
-connection = pymongo.Connection('localhost', 27017)
+connection = pymongo.MongoClient('localhost', 27017)
 db = connection.test
 model = UserModel(db)
 
