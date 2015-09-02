@@ -1,0 +1,37 @@
+$def with(form)
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+
+<body>
+
+<div id="header">
+<h1>Register</h1>
+</div>
+
+
+<div id="nav">
+<a href="index">Home</a><br />
+<a href="register">Register</a><br />
+<a href="login">Login</a><br />
+<a href="group_by">Grouping and filtering</a><br />
+<a href="list_dir">List directories</a><br />
+</div>
+
+
+
+<div id="section" align="center">
+<form method="POST">
+    $:form.render()
+</form>
+</div>
+
+
+<div id="footer">
+Technicolor project by Esan Mandal
+</div>
+
+</body>
+<html>

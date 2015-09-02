@@ -1,0 +1,80 @@
+$def with(lform, grouping,sortedkeys,pages,filter_by,filter_by_value, group_by)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+
+</head>
+<body>
+
+<div id="header">
+<h1>Filtering and grouping</h1>
+</div>
+
+<div id="nav">
+<a href="index">Home</a><br />
+<a href="register">Register</a><br />
+<a href="login">Login</a><br />
+<a href="group_by">Grouping and filtering</a><br />
+<a href="list_dir">List directories</a><br />
+</div>
+
+<div id="section" align="center">
+
+<h2>Enter filtering and grouping parameters</h2>
+
+<form method="POST">
+	<table>
+		<tr>
+			<td>FILTER BY: $:lform.filter_by.render()</td>
+			<td>FILTER VALUE: $:lform.filter_by_value.render()</td>
+		</tr>
+		<tr>
+			<td>GROUP BY: $:lform.group_by.render()</td>
+		</tr>
+		<tr>
+			<td>$:lform.submit.render()</td>
+		</tr>
+		
+	</table>
+
+</form>
+<h2>  Processed Data :</h2>
+
+$for page in range(1, pages + 1):
+    <a href="/group_by?page=$page&filter_parm=$filter_by&filter_value_parm=$filter_by_value&group_parm=$group_by">$page</a>
+
+<table id="t01">
+	    <tr>
+	    	<th> FIRST NAME </th>
+	    	<th> LAST NAME </th>
+	    	<th> SEX </th>
+	    	<th> EMAIL</th>
+	    	<th> CITY</th>
+	    	<th> STATE </th>
+	    	<th> ZIP </th>
+	    	
+	    </tr>
+    $for k in sortedkeys:
+	    <tr>
+	    	<th colspan="7" align="center"> $k </th>
+	    </tr>	 	
+	    	$for i in grouping[k]:
+	    		<tr>
+	    		<td> $i[u'firstname'] </td >
+	    		<td> $i[u'lastname'] </td >
+	    		<td> $i[u'sex'] </td >
+	    		<td> $i[u'email'] </td >
+	    		<td> $i[u'city']</td>
+	    		<td> $i[u'state'] </td >
+	    		<td> $i[u'zip'] </td >
+		   		</tr>
+</table>
+</div>
+
+<div id="footer">
+Technicolor project by Esan Mandal
+</div>
+
+
+</body>
+</html>

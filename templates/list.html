@@ -1,0 +1,62 @@
+$def with(users, pages)
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+
+</head>
+<body>
+
+<div id="header">
+<h1>All entries in database :</h1>
+</div>
+
+<div id="nav">
+<a href="index">Home</a><br />
+<a href="register">Register</a><br />
+<a href="login">Login</a><br />
+<a href="group_by">Grouping and filtering</a><br />
+<a href="list_dir">List directories</a><br />
+</div>
+
+<div id="section" align="center">
+
+$for page in range(1, pages + 1):
+    <a href="/list?page=$page">$page</a>
+
+<table id="t01">
+	    <tr>
+	    	<th> USERNAME </th>
+	    	<th> PASSWORD </th>
+	    	<th> FIRST NAME </th>
+	    	<th> LAST NAME </th>
+	    	<th> SEX </th>
+	    	<th> EMAIL</th>
+	    	<th> CITY</th>
+	    	<th> STATE </th>
+	    	<th> ZIP </th>
+	    	<th> CREATED ON </th>
+	    	
+	    </tr>
+    $for i in users:
+	    		<tr>
+	    		<td> $i[u'username'] </td >
+	    		<td> $i[u'password'] </td >
+	    		<td> $i[u'firstname'] </td >
+	    		<td> $i[u'lastname'] </td >
+	    		<td> $i[u'sex'] </td >
+	    		<td> $i[u'email'] </td >
+	    		<td> $i[u'city']</td>
+	    		<td> $i[u'state'] </td >
+	    		<td> $i[u'zip'] </td >
+	    		<td> $i[u'creation time'] </td >
+		   		</tr>
+</table>
+</div>
+
+<div id="footer">
+Technicolor project by Esan Mandal
+</div>
+
+</body>
+</html>

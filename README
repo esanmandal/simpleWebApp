@@ -1,0 +1,56 @@
+###############################################################################################################
+Deployment instructions and software requirements:
+###############################################################################################################
+
+Please have the following python modules installed: 
+ webpy   0.34
+ pymongo 2.7.2
+ json    2.0.9
+ python  2.6
+
+Please have the following versio of mongo DB installed:
+ mongo   2.6.3
+
+Download the source code from git hub 
+
+Execute app.py in python like so:
+python app.py
+
+You can access the web page by going to the following url on a web browser:
+localhost:8080
+
+###############################################################################################################
+Webpy framework:
+###############################################################################################################
+
+I chose webpy as the framework for this exercise because of the following reasons:
+1) It seemed appropriate for a small project like this exercise, since webpy is a small framework.
+2) It is pretty straight forward to use and test - no need for building and compiling
+3) Almost all the aspects of the app can be in two languages - python and html
+4) I can use tons of python modules to aid in my code, so this can be potentially extended quite easily
+5) The Mongo database that I chose for the project also has a python interface for it. 
+   This makes it very easy to integrate into the main app. 
+6) Development can be totally through the web or using traditional editors. 
+7) Applications can be packaged and distributed easily 
+8) The built-in Cherrypy server is good enough for small projects, but it can adapt to other servers. 
+
+
+###############################################################################################################
+Pagination:
+###############################################################################################################
+I have already implemented a solution to pagination where it was appropriate.
+
+###############################################################################################################
+Versioning:
+###############################################################################################################
+
+The most common way of versioning an API is to include the version number in every URL. 
+For example:
+localhost:8080/v1/login – where /v1/ means that this call is to version 1 of the api
+So for every subsequent version you can change v1 to v2 ... and so forth
+Currently the code is not structured for this kind of versioning but it shouldn't be too difficult to support 
+that with a little re-organisation of the code.
+
+ 
+
+

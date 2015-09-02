@@ -1,0 +1,52 @@
+$def with(user)
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+
+</head>
+<body>
+
+
+<div id="header">
+<h1>USER INFO</h1>
+</div>
+
+<div id="nav">
+<a href="index">Home</a><br />
+<a href="register">Register</a><br />
+<a href="login">Login</a><br />
+<a href="group_by">Grouping and filtering</a><br />
+<a href="list_dir">List directories</a><br />
+</div>
+
+<div id="section" align="center">
+<table id="t01">
+	    <tr>
+	    	<th> FIRST NAME </th>
+	    	<th> LAST NAME </th>
+	    	<th> SEX </th>
+	    	<th> EMAIL</th>
+	    	<th> CITY</th>
+	    	<th> STATE </th>
+	    	<th> ZIP </th>
+	    	
+	    </tr>
+	    	<tr>
+	    		<td> $user[u'firstname'] </td >
+	    		<td> $user[u'lastname'] </td >
+	    		<td> $user[u'sex'] </td >
+	    		<td> $user[u'email'] </td >
+	    		<td> $user[u'city']</td>
+	    		<td> $user[u'state'] </td >
+	    		<td> $user[u'zip'] </td >
+			</tr>
+</table>
+</div>
+
+
+<div id="footer">
+Technicolor project by Esan Mandal
+</div>
+
+</body>
+</html>

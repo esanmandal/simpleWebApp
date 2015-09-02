@@ -1,0 +1,55 @@
+$def with(lform, dir, pages, directory)
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+
+
+<body>
+
+
+<div id="header">
+<h1>List directory contents</h1>
+</div>
+
+<div id="nav">
+<a href="index">Home</a><br />
+<a href="register">Register</a><br />
+<a href="login">Login</a><br />
+<a href="group_by">Grouping and filtering</a><br />
+<a href="list_dir">List directories</a><br />
+</div>
+
+
+
+
+<div id="section" align="center">
+
+<form method="POST">
+    $:lform.render()
+   
+
+</form>
+
+$for page in range(1, pages + 1):
+    <a href="/list_dir?page=$page&directory=$directory">$page</a>
+    
+<table id="t01" >
+<th>Contents of $directory:</th>
+    $for k in dir:
+	    <tr>
+	    	<td>$k</td>
+	    </tr>
+</table>
+
+</div>
+
+
+<div id="footer">
+Technicolor project by Esan Mandal
+</div>
+
+</body>
+<html>
+
