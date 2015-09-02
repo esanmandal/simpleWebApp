@@ -273,7 +273,6 @@ class Group_by:
         filter_by_value = params.filter_value_parm if hasattr(params, 'filter_value_parm') else None
         group_by = params.group_parm if hasattr(params, 'group_parm') else None
         
-        print (filter_by, filter_by_value, group_by)
         #If there are valid inputs from the url then process the data
         if filter_by_value and filter_by and group_by:
             #query the model for results
