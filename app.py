@@ -99,7 +99,7 @@ class Login:
     def GET(self):
 
         f = login_form()
-        return render.login(f)
+        return render.login(f, failedmsg='')
     
     def POST(self):
         f = login_form()
@@ -118,9 +118,9 @@ class Login:
                 except ValueError:
                     res = model.validate_login(f.d)
             if res:
-                return render.user_info(user=res)   
+                return render.user_info(user=res)
             else:
-                return web.seeother('/login')
+                return render.login(f, failedmsg='Username and Password do not match')
 
 
 #Registration form

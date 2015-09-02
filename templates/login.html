@@ -1,4 +1,4 @@
-$def with(lform)
+$def with(lform, failedmsg)
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="./static/style.css">
@@ -23,6 +23,7 @@ $def with(lform)
 <form method="POST">
     $:lform.render()
 </form>
+    <h2>$failedmsg</h2>
 </div>
 
 
